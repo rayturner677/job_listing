@@ -9,13 +9,13 @@ CREATE TABLE IF NOT EXISTS employers(
     logo_url    TEXT
 )
 
-CREATE TABLE IF NOT EXISTS comments(
-    id SERIAL
-    name        TEXT,
-    address TEXT,
-    position    TEXT,
-    description    TEXT,
-    benefits   TEXT,
-    comment_info    Text,
-    employer_id REFERENCES employer(id)
-)
+--CREATE TABLE IF NOT EXISTS comments(
+--    id SERIAL
+--    name        TEXT,
+--    address TEXT,
+--    position    TEXT,
+--    description    TEXT,
+--    benefits   TEXT,
+--    comment_info    Text,
+--    employer_id REFERENCES employer(id)
+--)

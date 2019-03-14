@@ -5,33 +5,28 @@ import com.joblisting.joblisting.repositories.PostgresEmployerRepository;
 import com.joblisting.joblisting.repositories.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/employer")
-
-public class EmployerController {
-    Repository<EmployerForm> employerRepository;
+@RequestMapping("/list")
+public class ListEmployersController {
+    Repository<EmployerForm> repository;
 
     @Autowired
-    public EmployerController(PostgresEmployerRepository repository){
-        employerRepository = repository;
+    public ListEmployersController(PostgresEmployerRepository employerRepository){
+        repository = employerRepository;
     }
-
     @GetMapping
-    public String getEmployer(){return "employer";}
+    public String getPage(Model model){
+        model.addAttribute("employers", repository.findAll());
+        return "ListEmployers";
+}
 
     @PostMapping
-    public String postEmployer(EmployerForm employer){
-        if(employer.isValid()){
-            employerRepository.save(employer);
-        } else {
-            System.out.println(employer);
-            System.out.println("Something went wrong");
-            return "employer";
-        }
-        return "landing";
+    public String postPage(){
+        return "ListEmployers";
     }
 }

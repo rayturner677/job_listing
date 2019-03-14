@@ -79,6 +79,6 @@ public class EmployerForm {
         this.name = name;
     }
 
-    public boolean isValid(){return name != null && address != null && position != null && description != null
+    public boolean isValid(){return name != null && address != null && position != null && description != null && email != null
             && benefits != null && logo_url != null;}
 }
