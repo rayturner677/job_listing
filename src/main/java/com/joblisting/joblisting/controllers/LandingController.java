@@ -9,12 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 
 public class LandingController {
-    @GetMapping("/")
+    @GetMapping
     public String index() {return "landing";}
 
-    @GetMapping("/employer")
-    public String getEmployer(){return "employer";}
-
-    @GetMapping("/admin")
-    public String getAdmin() {return "admin";}
 }

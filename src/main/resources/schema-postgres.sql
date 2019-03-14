@@ -1,11 +1,12 @@
-CREATE TABLE IF NOT EXISTS employer(
+CREATE TABLE IF NOT EXISTS employers(
     id  SERIAL PRIMARY KEY,
     name    TEXT,
     address TEXT,
     position TEXT,
     description TEXT,
     benefits    TEXT,
-    email   TEXT
+    email   TEXT,
+    logo_url    TEXT
 )
 
 CREATE TABLE IF NOT EXISTS comments(
@@ -13,8 +14,8 @@ CREATE TABLE IF NOT EXISTS comments(
     name        TEXT,
     address TEXT,
     position    TEXT,
-     description    TEXT,
-     benefits   TEXT,
+    description    TEXT,
+    benefits   TEXT,
     comment_info    Text,
     employer_id REFERENCES employer(id)
 )

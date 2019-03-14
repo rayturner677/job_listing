@@ -48,32 +48,44 @@
     <body>
         <div class="container">
             <form action="/employer" method="GET">
-                <p>Name:</p>
-                <input type="text" name="name" required />
-
-                <p>Address: </p>
-                <input type="text" name="address" required />
-
-                <p>Position:</p>
-                <input type="text" name="position" required />
-
-                <p> Email: </p>
-                <input type="email" name="location" required />
-
-                <p>Benefits:</p>
-                <textarea name="benefits" style="width:40rem; padding-bottom:2rem; " required></textarea>
-
-                <div class="custom-file">
-                    <input
-                        type="file"
-                        class="custom-file-input"
-                        id="customFile"
-                        required
-                    />
-                    <label class="custom-file-label" for="customFile"
-                        >Choose file</label
-                    >
+                <div>
+                    <label>Name:
+                    <input type="text" name="name" required />
+                    </label>
                 </div>
+
+                <div>
+                    <label>Address:
+                    <input type="text" name="address" required />
+                    </label>
+                </div>
+
+                <div>
+                    <label>Position:
+                    <input type="text" name="position" required />
+                    </label>
+                </div>
+
+                <div>
+                    <label> Email:
+                    <input type="email" name="location" required />
+                    </label>
+                </div>
+
+                <div>
+                    <label>Benefits:
+                    <textarea name="benefits" style="width:40rem; padding-bottom:2rem;" required></textarea>
+                    </label>
+                <div>
+
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlFile1">Select Image: </label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                  </div>
+                </form>
+
+                <button type="submit" class=" btn btn-primary mt-2"> Submit </button>
             </form>
         </div>
     </body>
