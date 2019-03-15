@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 
 public class LandingController {
     Repository<EmployerForm> repository;
@@ -28,22 +28,20 @@ public class LandingController {
         return "landing";
     }
 
-    @PostMapping
-    public String postPage(){
-        return "landing";
-    }
-
     @GetMapping("/{id}")
     public String getEmployerPage(Model model, @PathVariable(value = "id") Integer id) {
         var employer = repository.findById(id);
-        System.out.println("You hit this point!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println(employer);
         if (employer.isPresent()){
             model.addAttribute("employer", employer.get());
-            System.out.println("It was here////////");
-            return "landing";
+            return "employerPage";
         }else{
             return "404";
         }
+    }
+
+    @PostMapping
+    public String postPage(){
+        return "landing";
     }
 }

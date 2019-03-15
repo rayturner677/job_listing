@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/employer")
+@RequestMapping("/sign-up")
 
 public class EmployerController {
     Repository<EmployerForm> employerRepository;
@@ -21,7 +21,7 @@ public class EmployerController {
     }
 
     @GetMapping
-    public String getEmployer(){return "employer";}
+    public String getEmployer(){return "sign-up";}
 
     @PostMapping
     public String postEmployer(EmployerForm employer){
@@ -30,7 +30,7 @@ public class EmployerController {
         } else {
             System.out.println(employer);
             System.out.println("Something went wrong");
-            return "employer";
+            return "sign-up";
         }
         return "landing";
     }
