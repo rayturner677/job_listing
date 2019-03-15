@@ -18,3 +18,12 @@
     height: 100%;
     vertical-align: middle;
 }
+
+.list-components {
+    border: solid 2px black;
+    margin-top: 1rem;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    width: 22rem;
+    position: center;
+}

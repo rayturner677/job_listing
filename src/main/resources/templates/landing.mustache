@@ -43,9 +43,17 @@
                 </div>
         </header>
         <body>
-            <a href="/employer" class="btn btn-primary">Sign-in as Employer</a>
-
-            <a href="/admin" class="btn btn-primary"> Admin </a>
+             {{#employers}}
+                    <div class="list-components mx-auto">
+                       <a href="list/{{id}}" class=""> <h4>{{ name }} </h4></a>
+                        <h4>{{ address }} </h4>
+                        <h4>{{ position }} </h4>
+                        <h4>{{ description }} </h4>
+                        <h4>{{ benefits }} </h4>
+                        <h4>{{ email }} </h4>
+                        <h4>{{ logo_url }} </h4>
+                     </div>
+              {{/employers}}
          </body>
 
 </html>

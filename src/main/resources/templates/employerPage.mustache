@@ -6,7 +6,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1, user-scalable=no"
         />
-        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="../css/main.css" />
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -45,19 +45,17 @@
             </div>
         </div>
     </header>
-
     <body>
-        {{#employers}}
-            <h4>{{ name }} </h4>
-            <h4>{{ address }} </h4>
-            <h4>{{ position }} </h4>
-            <h4>{{ description }} </h4>
-            <h4>{{ benefits }} </h4>
-            <h4>{{ email }} </h4>
-            <h4>{{ logo_url }} </h4>
-        {{/employers}}
+        {{#employer}}
+            <div class="container border mx-auto p-4 mt-5" style="width: 35rem;" >
+                <h4>Name: {{ name }} </h4>
+                <h4>Address: {{ address }} </h4>
+                <h4>Position: {{ position }} </h4>
+                <h4>Description: {{ description }} </h4>
+                <h4>Benefits: {{ benefits }} </h4>
+                <h4>Email: {{ email }} </h4>
+                <img src="/{{ logo_url }}" alt="">
+            </div>
+        {{/employer}}
     </body>
-
-
-
 </html>

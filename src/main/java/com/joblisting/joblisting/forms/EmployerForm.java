@@ -1,6 +1,7 @@
 package com.joblisting.joblisting.forms;
 
 public class EmployerForm {
+    public Integer id;
     public   String email;
     public String name;
     public String position;
@@ -9,7 +10,8 @@ public class EmployerForm {
     public String benefits;
     public String logo_url;
 
-    public EmployerForm(String name, String address, String position, String description, String benefits, String email, String logo_url) {
+    public EmployerForm(Integer id, String name, String address, String position, String description, String benefits, String email, String logo_url) {
+        this.id  = id;
         this.name = name;
         this.address = address;
         this.position = position;
@@ -18,7 +20,7 @@ public class EmployerForm {
         this.email = email;
         this.logo_url = logo_url;
     }
-
+    public void getId(Integer id) { this.id = id; }
 
     public String getEmail() {
         return email;
@@ -39,8 +41,6 @@ public class EmployerForm {
     public String getBenefits() {
         return benefits;
     }
-
-
 
     public void setBenefits(String benefits) {
         this.benefits = benefits;
@@ -69,7 +69,6 @@ public class EmployerForm {
     public void setAddress(String address) {
         this.address = address;
     }
-
 
     public String getName() {
         return name;

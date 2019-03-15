@@ -20,7 +20,7 @@ public PostgresEmployerRepository(JdbcTemplate jdbctemplate){
 }
 
     public Optional<EmployerForm> findById(Integer id) {
-        return Optional.empty();
+        return Optional.ofNullable(jdbc.queryForObject("SELECT id, name, address, position, description, benefits, email, logo_url FROM employers WHERE id = ?", this::mapToRow, id));
     }
 
     public void save(EmployerForm employer) {
@@ -34,13 +34,14 @@ public PostgresEmployerRepository(JdbcTemplate jdbctemplate){
 
     private EmployerForm mapToRow(ResultSet row, int rowNum) throws SQLException{
         return new EmployerForm(
+                row.getInt("id"),
                 row.getString("name"),
                 row.getString("address"),
                 row.getString("position"),
                 row.getString("description"),
                 row.getString("benefits"),
                 row.getString("email"),
-                row.getNString("logo_url")
+                row.getString("logo_url")
         );
     }
 }
