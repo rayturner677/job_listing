@@ -32,6 +32,10 @@ public PostgresEmployerRepository(JdbcTemplate jdbctemplate){
         return jdbc.query("SELECT id, name, address, position, description, benefits, email, logo_url FROM employers", this::mapToRow);
     }
 
+    public void delete(EmployerForm form){
+        jdbc.update("DELETE FROM employers WHERE id = ?", form.id);
+    }
+
     private EmployerForm mapToRow(ResultSet row, int rowNum) throws SQLException{
         return new EmployerForm(
                 row.getInt("id"),

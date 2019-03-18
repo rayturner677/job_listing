@@ -27,11 +27,11 @@ public class EmployerController {
     public String postEmployer(EmployerForm employer){
         if(employer.isValid()){
             employerRepository.save(employer);
+            return "redirect:/home";
         } else {
             System.out.println(employer);
             System.out.println("Something went wrong");
             return "sign-up";
         }
-        return "landing";
     }
 }
