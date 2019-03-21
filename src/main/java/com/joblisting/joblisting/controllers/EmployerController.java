@@ -29,8 +29,6 @@ public class EmployerController {
             employerRepository.save(employer);
             return "redirect:/home";
         } else {
-            System.out.println(employer);
-            System.out.println("Something went wrong");
             return "sign-up";
         }
     }
