@@ -1,7 +1,6 @@
 package com.joblisting.joblisting.repositories;
 
 import com.joblisting.joblisting.forms.CommentForm;
-import com.joblisting.joblisting.forms.DeleteForm;
 import com.joblisting.joblisting.forms.EmployerForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -54,12 +53,4 @@ public class PostgresEmployerRepository implements com.joblisting.joblisting.rep
                 row.getString("logo_url")
         );
     }
-
-//    private CommentForm mapToRow(ResultSet row, int rowNum) throws SQLException{
-//    return new CommentForm(
-//            row.getInt("id"),
-//            row.getString("comment_body"),
-//            row.getInt("employer_id")
-//    );
-//    }
 }

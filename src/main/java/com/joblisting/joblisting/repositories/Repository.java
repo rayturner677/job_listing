@@ -14,6 +14,4 @@ public interface Repository<E>{
     void save(E e);
 
     void delete(Integer id);
-
-//    void saveComment(CommentForm form);
 }
