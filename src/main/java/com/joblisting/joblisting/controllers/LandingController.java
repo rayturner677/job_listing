@@ -22,8 +22,9 @@ public class LandingController {
     Repository<CommentForm> commentFormRepository;
 
     @Autowired
-    public LandingController(PostgresEmployerRepository employerRepository, PostgresCommentRepoitory commentFormRepository){
+    public LandingController(PostgresEmployerRepository employerRepository, PostgresCommentRepoitory commentRepository){
         repository = employerRepository;
+        commentFormRepository = commentRepository;
     }
     @GetMapping
     public String getPage(Model model){

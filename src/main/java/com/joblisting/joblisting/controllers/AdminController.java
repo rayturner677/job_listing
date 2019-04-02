@@ -19,9 +19,9 @@ public class AdminController {
 
 
     @Autowired
-    public AdminController(PostgresEmployerRepository employerRepository, PostgresCommentRepoitory commentRepoitory){
+    public AdminController(PostgresEmployerRepository employerRepository, PostgresCommentRepoitory commentRepository){
         repository = employerRepository;
-        commentFormRepository = commentRepoitory;
+        commentFormRepository = commentRepository;
     }
 
     @GetMapping
