@@ -11,7 +11,9 @@ public class CommentForm {
         this.employer_id = employer_id;
     }
 
-
+    public Integer getId() {
+        return id;
+    }
     public Integer getEmployer_id() {
         return employer_id;
     }
@@ -20,15 +22,15 @@ public class CommentForm {
         this.employer_id = employer_id;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
     public String getComment_body() {
         return comment_body;
     }
 
     public void setComment_body(String comment_body) {
         this.comment_body = comment_body;
+    }
+
+    public boolean is_valid(){
+        return comment_body != null && employer_id != null;
     }
 }

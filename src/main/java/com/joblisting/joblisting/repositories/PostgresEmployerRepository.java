@@ -1,6 +1,5 @@
 package com.joblisting.joblisting.repositories;
 
-import com.joblisting.joblisting.forms.CommentForm;
 import com.joblisting.joblisting.forms.EmployerForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,9 +36,6 @@ public class PostgresEmployerRepository implements com.joblisting.joblisting.rep
         jdbc.update("DELETE FROM employers WHERE id = ?", id);
     }
 
-    public void saveComments(CommentForm form) {
-        jdbc.update("INSERT INTO comments(comment_body, employer_id) VALUES(?,?)", form.comment_body, form.employer_id);
-    }
 
     private EmployerForm mapToRow(ResultSet row, int rowNum) throws SQLException {
         return new EmployerForm(

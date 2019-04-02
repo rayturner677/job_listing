@@ -7,14 +7,30 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class PostgresCommentRepoitory {
+public class PostgresCommentRepoitory implements com.joblisting.joblisting.repositories.Repository<CommentForm> {
     private JdbcTemplate jdbc;
 
     @Autowired
     public PostgresCommentRepoitory(JdbcTemplate jdbctemplate){
         jdbc = jdbctemplate;
+    }
+
+    public Optional<CommentForm> findById(Integer id){
+        return Optional.ofNullable(jdbc.queryForObject("SELECT id, comment_body, employer_id FROM comments WHERE id = ?", this::mapToRow , id));
+    }
+
+    public List<CommentForm> findAll() {
+        return jdbc.query("SELECT id, comment_body, employer_id FROM comments", this::mapToRow);
+    }
+
+    public void delete(Integer id){jdbc.update("DELETE FROM comments WHERE id = ?", id);}
+
+    public void save(CommentForm form) {
+        jdbc.update("INSERT INTO comments(comment_body, employer_id) VALUES(?,?)", form.comment_body, form.employer_id);
     }
 
     CommentForm mapToRow(ResultSet row, int rowNum) throws SQLException {

@@ -46,14 +46,30 @@
          {{#employers}}
                 <div class="list-components mx-auto">
                    <a href="home/{{id}}" class=""> <h4>{{ name }} </h4></a>
-                    <h4>{{ address }} </h4>
-                    <h4>{{ position }} </h4>
-                    <h4>{{ description }} </h4>
-                    <h4>{{ benefits }} </h4>
-                    <h4>{{ email }} </h4>
-                    <h4>{{ logo_url }} </h4>
-                 </div>
+                    <h4 class="text-justify">{{ address }} </h4>
+                    <h4 class="text-justify">{{ position }} </h4>
+                    <h4 class="text-justify">{{ description }} </h4>
+                    <h4 class="text-justify">{{ benefits }} </h4>
+                    <h4 class="text-justify">{{ email }} </h4>
+                    <img  src="{{ logo_url }}">
+
+
+                 <form action="/admin/{{id}}/HomeComments" method="POST">
+                     <h6>Leave Comment: </h6>
+                     <input type="text" name="comment_body">
+
+                     <button type="submit" class="btn btn-info"> Comment </button>
+                 </form>
+
+                     <div class="d-flex">
+                          <h4>Comments:<h4>
+                           {{ #comments.length }}
+                               <p> {{ comment_body }} </p>
+                           {{ /comments.length }}
+                     </div>
+                </div>
           {{/employers}}
+
      </body>
 
 </html>

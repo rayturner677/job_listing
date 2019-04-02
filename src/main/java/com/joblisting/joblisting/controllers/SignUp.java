@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/sign-up")
 
-public class EmployerController {
+public class SignUp {
     Repository<EmployerForm> employerRepository;
 
     @Autowired
-    public EmployerController(PostgresEmployerRepository repository){
+    public SignUp(PostgresEmployerRepository repository){
         employerRepository = repository;
     }
 
