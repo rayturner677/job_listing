@@ -13,4 +13,10 @@ public interface Repository<E>{
     void save(E e);
 
     void delete(Integer id);
+
+    List<E> abc();
+
+    List<E> newest();
+
+    List<E> oldest();
 }

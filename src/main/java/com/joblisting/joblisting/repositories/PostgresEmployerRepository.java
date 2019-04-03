@@ -36,6 +36,17 @@ public class PostgresEmployerRepository implements com.joblisting.joblisting.rep
         jdbc.update("DELETE FROM employers WHERE id = ?", id);
     }
 
+    public List<EmployerForm> abc(){
+        return jdbc.query("SELECT id, name, address, position, description, benefits, email, logo_url FROM employers ORDER BY name ASC", this::mapToRow);
+    }
+
+    public List<EmployerForm> newest(){
+        return jdbc.query("SELECT id, name, address, position, description, benefits, email, logo_url FROM employers ORDER BY id DESC", this::mapToRow);
+    }
+
+    public List<EmployerForm> oldest(){
+        return jdbc.query("Select id, name, address, position, description, benefits, email, logo_url FROM employers ORDER BY id ASC", this::mapToRow);
+    }
 
     private EmployerForm mapToRow(ResultSet row, int rowNum) throws SQLException {
         return new EmployerForm(
