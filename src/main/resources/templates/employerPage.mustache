@@ -47,14 +47,15 @@
     </header>
     <body>
         {{#employer}}
-            <div class="container border mx-auto p-4 mt-5" style="width: 35rem;" >
+            <div class="container  border mx-auto p-4 mt-5" style="width: 102rem;" >
+                <img src="{{ logo_url }}" class="img-wrap" alt="" >
                 <h4>Name: {{ name }} </h4>
                 <h4>Address: {{ address }} </h4>
                 <h4>Position: {{ position }} </h4>
                 <h4>Description: {{ description }} </h4>
                 <h4>Benefits: {{ benefits }} </h4>
                 <h4>Email: {{ email }} </h4>
-                <img src="{{ logo_url }}" alt="">
+
             </div>
         {{/employer}}
     </body>

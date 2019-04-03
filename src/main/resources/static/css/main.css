@@ -33,7 +33,15 @@
     margin-bottom: 2rem!important;
 }
 .post-img{
-    background-image:
     float: top !important;
     float: left !important;
+    height: 255px;
+    width: 255px;
+}
+.flex-1{
+flex:1;}
+
+.img-wrap{
+    float: left;
+    padding: 0px 10px 0 0;
 }

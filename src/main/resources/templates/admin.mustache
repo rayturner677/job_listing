@@ -44,32 +44,32 @@
          <body>
 
              {{#employers}}
-
                     <div class="list-components mx-auto">
-                       <a href="home/{{id}}" class=""> <h4>{{ name }} </h4></a>
+                        <img src="{{ logo_url }}" class="img-wrap">
+                       <a href="home/{{id}}" class="text-wrap"> <h4>{{ name }} </h4></a>
                         <h4>{{ address }} </h4>
                         <h4>{{ position }} </h4>
                         <h4>{{ description }} </h4>
                         <h4>{{ benefits }} </h4>
                         <h4>{{ email }} </h4>
-                        <img src="{{ logo_url }}" >
 
                         <form action="/admin/{{id}}/comments" method="POST">
-                            <h6>Leave Comment: </h6>
-                            <input type="text" name="comment_body">
+                            <h4>Leave Comment: </h4>
+                            <input type="text" name="comment_body" style="margin-left: 14.8rem;">
 
                             <button type="submit" class="btn btn-info"> Comment </button>
                         </form>
 
-                         <form action="/admin/{{id}}/delete" method="POST">
-                            <button type="submit" class="btn btn-danger"> Delete </button>
-                         </form>
                          <div class="d-flex">
                              <h4>Comments:<h4>
                               {{ #comments }}
                                   <p> {{ comment_body }} </p>
                               {{ /comments }}
                          </div>
+
+                         <form action="/admin/{{id}}/delete" method="POST">
+                             <button type="submit" class="btn btn-danger" style="margin-left: 54rem;"> Delete Post</button>
+                         </form>
                     </div>
               {{/employers}}
 
